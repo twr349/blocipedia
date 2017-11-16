@@ -50,3 +50,6 @@ source 'https://rubygems.org'
  
  #Devise authentication 
  gem 'devise'
+ 
+ #Figaro
+ gem 'figaro', '1.0'
