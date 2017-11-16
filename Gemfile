@@ -39,4 +39,14 @@ source 'https://rubygems.org'
    gem 'listen', '~> 3.0.5'
  end
  
+ #rspec testing
+ group :development, :test do
+   gem 'rspec-rails', '~> 3.0'
+   gem 'rails-controller-testing'
+ end
+ 
+ #Bootstrap
  gem 'bootstrap-sass'
+ 
+ #Devise authentication 
+ gem 'devise'
