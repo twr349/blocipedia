@@ -17,7 +17,7 @@
      <nav class="navbar navbar-default">
        <div class="container-fluid">
          <div class="navbar-header">
-            <li><%= link_to "Blocipedia", welcome_index_path, class: "navbar-brand" %></li>
+            <li><%= link_to "Blocipedia", root_path, class: "navbar-brand" %></li>
          </div>  
           <ul class="nav navbar-nav navbar-right">
           <% if user_signed_in? %>
@@ -28,6 +28,18 @@
          </ul>
        </div>
      </nav>
+     
+     <% if flash[:notice] %>
+         <div class="alert alert-success">
+           <button type="button" class="close" data-dismiss="alert">&times;</button>
+           <%= flash[:notice] %>
+         </div>
+       <% elsif flash[:alert] %>
+         <div class="alert alert-warning">
+           <button type="button" class="close" data-dismiss="alert">&times;</button>
+           <%= flash[:alert] %>
+         </div>
+       <% end %>
      
      
      <%= yield %>
