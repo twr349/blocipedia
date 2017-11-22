@@ -1,7 +1,5 @@
 class WikisController < ApplicationController
-  
-   
-  
+ 
   def index
     @wikis = Wiki.all
   end
@@ -18,6 +16,7 @@ class WikisController < ApplicationController
     @wiki = Wiki.new
     @wiki.title = params[:wiki][:title]
     @wiki.body = params[:wiki][:body]
+    @wiki.user = current_user
     
     if @wiki.save
       flash[:notice] = "Wiki was saved."
@@ -58,6 +57,12 @@ class WikisController < ApplicationController
     end
   end
 
+  def authorize_user
+     unless current_user.admin?
+       flash[:alert] = "You must be an admin to do that."
+       redirect_to wikis_path
+     end
+  end
 
 end#end of ends
 
