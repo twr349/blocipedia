@@ -43,6 +43,7 @@ source 'https://rubygems.org'
  group :development, :test do
    gem 'rspec-rails', '~> 3.0'
    gem 'rails-controller-testing'
+   gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
  end
  
  #Bootstrap
