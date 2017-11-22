@@ -53,3 +53,6 @@ source 'https://rubygems.org'
  
  #Figaro
  gem 'figaro', '1.0'
+ 
+ #Pundit
+ gem 'pundit'

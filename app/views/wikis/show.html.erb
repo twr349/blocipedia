@@ -4,7 +4,8 @@
           <p><%= @wiki.body %></p>
    
      <%= link_to "Edit", edit_wiki_path(@wiki), class: 'btn btn-default' %>
+     <% if current_user && current_user.admin? %>
      <%= link_to "Delete Wiki", @wiki, method: :delete, class: 'btn btn-danger', data: {confirm: 'Are you sure you want to delete this wiki?'} %>
-   
+     <% end %>
    </div>
  </div>
