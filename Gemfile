@@ -58,3 +58,6 @@ source 'https://rubygems.org'
  #Pundit
  gem "pundit"
  
+ #Stripe
+ gem "stripe"
+ 

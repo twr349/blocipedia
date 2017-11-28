@@ -9,8 +9,8 @@ class User < ApplicationRecord
     before_create :set_default_role
     
     def set_default_role
-      self.role ||= :standard 
+      self.role ||= :Standard 
     end
   
-  enum role: [:standard, :premium, :admin]
+  enum role: [:Standard, :Premium, :Admin]
 end
