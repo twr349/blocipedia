@@ -15,10 +15,19 @@ users = User.all
     Wiki.create!(
     user: users.sample,
     title: Faker::Lorem.word,
-    body: Faker::Lorem.paragraph
+    body: Faker::Lorem.paragraph,
+    private: false
 )
 end
 
+10.times do 
+    Wiki.create!(
+    user: users.sample,
+    title: "Shhh it's Private " + Faker::Lorem.word,
+    body: Faker::Lorem.paragraph,
+    private: true
+)
+end
 wikis = Wiki.all
 
 

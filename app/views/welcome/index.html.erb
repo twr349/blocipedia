@@ -2,6 +2,8 @@
     <div class="jumbotron">
        <li><%= link_to "Veiw all Wikis", wikis_path %></li>
        <li><%= link_to "Create new Wiki", new_wiki_path(@wiki) %></li>
+       <% if current_user.Standard? %>
        <li><%= link_to "Upgrade to Premium!", new_charge_path %></li>
+       <% end %>
     </div>
 </div>
