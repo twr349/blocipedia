@@ -26,7 +26,7 @@ wikis = Wiki.all
  admin = User.create!(
    email:    'admin@example.com',
    password: 'helloworld',
-   role:     'admin'
+   role:     'Admin'
  )
  admin.skip_confirmation!
  admin.save!
@@ -36,7 +36,7 @@ wikis = Wiki.all
  premium = User.create!(
    email:    'premium@example.com',
    password: 'helloworld',
-   role: 'premium'
+   role: 'Premium'
  )
  premium.skip_confirmation!
  premium.save!
@@ -45,7 +45,7 @@ wikis = Wiki.all
  standard = User.create!(
    email:    'standard@example.com',
    password: 'helloworld',
-   role: 'standard'
+   role: 'Standard'
  )
  standard.skip_confirmation!
  standard.save!
