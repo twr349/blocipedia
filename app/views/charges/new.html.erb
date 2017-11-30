@@ -1,4 +1,14 @@
-<%= form_tag charges_path do %>
-   <h4>Click the button!</h4>
-   <script class='stripe-button' src="https://checkout.stripe.com/checkout.js" data-key="<%= @stripe_btn_data[:key] %>" data-amount="<%= @stripe_btn_data[:amount] %>" data-description="<%= @stripe_btn_data[:description] %>" ></script>
- <% end %>
+<div class="container">
+    <div class="jumbotron">
+      <%= form_tag charges_path do %>
+      <h1>Go Premium Now!</h1>
+      <h3>Create private wikis!</h3>
+      <h4>Only $15.00</h4>
+      <script class='stripe-button' src="https://checkout.stripe.com/checkout.js" data-key="<%= @stripe_btn_data[:key] %>" data-amount="<%= @stripe_btn_data[:amount] %>" data-description="<%= @stripe_btn_data[:description] %>" ></script>
+      <% end %>
+     
+   </div>
+    <div>
+         <%= link_to "Back", :back %>
+    </div>
+</div>

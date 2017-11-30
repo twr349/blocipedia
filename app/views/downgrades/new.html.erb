@@ -1,3 +1,10 @@
-<h1>Cancel Subscritption</h1>
-
-<%=link_to "Cancel Subscritption", downgrades_path, method: :edit, class: 'btn btn-danger', data: {confirm: 'Are you sure you want to Cancel Subscritption? All private wikis will become public!'} %>
+<div class="container">
+    <div class="jumbotron">
+        <h2>Cancel Subscription</h2>
+        <%=link_to "Cancel subscription", downgrades_path, method: :edit, class: 'btn btn-danger', data: {confirm: 'Are you sure you want to Cancel Subscription? All private wikis will become public!'} %>
+        
+    </div>
+    <div>
+        <%= link_to "Back", :back %>
+    </div>
+</div>

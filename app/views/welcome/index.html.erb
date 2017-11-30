@@ -1,9 +1,21 @@
 <div class="container">
     <div class="jumbotron">
-       <li><%= link_to "Veiw all Wikis", wikis_path %></li>
-       <li><%= link_to "Create new Wiki", new_wiki_path(@wiki) %></li>
-       <% if current_user.Standard? %>
-       <li><%= link_to "Upgrade to Premium!", new_charge_path %></li>
-       <% end %>
+       <div class="container">
+        <% if current_user.wikis.count == 0 %>
+            <h1>No Wikis</h1>
+            <h3>Get writing!</h3>
+        <% else %>
+            <h1>Your Wikis</h1>
+            <% current_user.wikis.each do |wiki| %>
+              <div class="media col-sm-4">
+              <div class="media-body">
+               <h4 class="media-heading">
+                 <span><%= link_to wiki.title, wiki %></span>
+               </h4>
+              </div>
+            </div>
+           <% end %>
+        <% end %>
+        </div>
     </div>
 </div>
