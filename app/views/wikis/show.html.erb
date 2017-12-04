@@ -1,7 +1,7 @@
 <div class="container">
     <div class="jumbotron">
         <h1><%= @wiki.title %></h1>
-          <p><%= @wiki.body %></p>
+          <p><%= markdown(@wiki.body) %></p>
             <small>
               submitted <%= time_ago_in_words(@wiki.created_at) %> ago by <%= @wiki.user.email %> <br>
              <% if @wiki.private? %>

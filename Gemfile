@@ -61,3 +61,6 @@ source 'https://rubygems.org'
  #Stripe
  gem "stripe"
  
+ #markdown
+ 
+ gem 'redcarpet'

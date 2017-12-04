@@ -1,5 +1,6 @@
 class WikisController < ApplicationController
  
+
   
   def index
     if current_user.Standard?
