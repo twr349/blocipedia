@@ -3,15 +3,12 @@ class WikisController < ApplicationController
 
   
   def index
-    if current_user.Standard?
-      @wikis = Wiki.where(private: false)
-    else
-      @wikis = Wiki.all
-    end
+     @wikis = Wiki.all
   end
 
   def show
     @wiki = Wiki.find(params[:id])
+    
   end
 
   def new
@@ -19,10 +16,11 @@ class WikisController < ApplicationController
   end
   
   def create 
-    @wiki = Wiki.new
+    @wiki = Wiki.new(params[:id])
     @wiki.title = params[:wiki][:title]
     @wiki.body = params[:wiki][:body]
     @wiki.user = current_user
+    
     
     if @wiki.save
       flash[:notice] = "Wiki was saved."
@@ -35,12 +33,15 @@ class WikisController < ApplicationController
 
   def edit
     @wiki = Wiki.find(params[:id])
+   
+    
   end
   
   def update
     @wiki = Wiki.find(params[:id])
     @wiki.title = params[:wiki][:title]
     @wiki.body = params[:wiki][:body]
+    @wiki.collaborators = []
     
     if @wiki.save
       flash[:notice] = "Wiki was updated."

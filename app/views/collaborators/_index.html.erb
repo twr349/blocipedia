@@ -1,0 +1,17 @@
+
+  <div class="container">
+     <div class="form-group"> 
+  <%= form_tag [@wiki, Collaborator.new] do |f| %>
+   <select class="form-control" name="user_email" id="sel1">
+    <% @users = User.all %>
+    <% @users.each do |u| %>
+    <option value='<%= u.email %>'><%= u.email %></option>
+    <% end %>
+  </select> 
+   
+<button type="submit" class="btn btn-default" id="sel1">Submit</button>      
+    
+     
+  <% end %>
+  </div>
+</div>

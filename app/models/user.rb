@@ -5,6 +5,8 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
          
     has_many :wikis, dependent: :destroy
+    has_many :wiki_collaborators, dependent: :destroy
+    has_many :wiki_collaborations, through: :wiki_collaborators, class_name: 'Wiki'
     
     before_create :set_default_role
     
