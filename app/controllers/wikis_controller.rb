@@ -3,11 +3,7 @@ class WikisController < ApplicationController
 
   
   def index
-    if current_user.Standard?
-      @wikis = Wiki.where(private: false)
-    else
-      @wikis = Wiki.all
-    end
+     @wikis = policy_scope(Wiki)
   end
 
   def show

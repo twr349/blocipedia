@@ -6,7 +6,7 @@ class CreateCollaborators < ActiveRecord::Migration[5.1]
      t.references :email, index: true, foreign_key: true
      t.timestamps null: false
      
-     add_column :collaborators, :wiki_id, :integer
+     
      end
   end
 end
