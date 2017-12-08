@@ -4,6 +4,7 @@
           <p><%= markdown(@wiki.body) %></p>
             <small>
               submitted <%= time_ago_in_words(@wiki.created_at) %> ago by <%= @wiki.user.email %> <br>
+              
              <% if @wiki.private? %>
                  Private Wiki
              <% end %>
