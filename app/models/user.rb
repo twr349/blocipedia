@@ -6,7 +6,7 @@ class User < ApplicationRecord
          
     has_many :wikis, dependent: :destroy
     has_many :wiki_collaborators, dependent: :destroy
-    has_many :wiki_collaborations, through: :wiki_collaborators, class_name: 'Wiki'
+    has_many :wiki_collaborators, through: :wiki_collaborators 
     
     before_create :set_default_role
     
