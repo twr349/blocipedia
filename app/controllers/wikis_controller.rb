@@ -1,6 +1,6 @@
 class WikisController < ApplicationController
  
-
+  
   
   def index
      @wikis = policy_scope(Wiki)
@@ -20,7 +20,7 @@ class WikisController < ApplicationController
     @wiki.title = params[:wiki][:title]
     @wiki.body = params[:wiki][:body]
     @wiki.user = current_user
-    @wiki.collaborators = []
+    
     
     if @wiki.save
       flash[:notice] = "Wiki was saved."
@@ -71,6 +71,10 @@ class WikisController < ApplicationController
      end
   end
   
+  def wiki_params
+    params.require(:wiki).permit(:title, :body, :private, :user)
+    params.require(:wiki).permit(:title, :body, :private, :user_id, :user_ids => [])
+  end
   
 
 end#end of ends

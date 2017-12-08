@@ -2,12 +2,12 @@ Rails.application.routes.draw do
 
   resources :charges, only: [:new, :create]
 
-  resources :wikis 
+  
   
   resources :collaborators
   
   resources :wikis do
-      resources :collaborators
+     resources :collaborators, only: [:new, :create, :update, :destroy]
    end
 
   resources :downgrades

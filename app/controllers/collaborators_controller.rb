@@ -14,7 +14,7 @@ class CollaboratorsController < ApplicationController
       
      
       if @collaborator.save
-        
+      
         flash[:notice] = "#{@collaborator.email} is a new collaborator."
         redirect_to @wiki
       
@@ -24,10 +24,7 @@ class CollaboratorsController < ApplicationController
   def destroy
     
   end
-private
-  def collaborators_params
-    params.require(:collaborator).permit(:user_email, :wiki_id, collaborators:[])
-  end
+
 
 end#end of ends
 
