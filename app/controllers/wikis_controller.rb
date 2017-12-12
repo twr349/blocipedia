@@ -10,6 +10,7 @@ class WikisController < ApplicationController
     @wiki = Wiki.find(params[:id])
     @collaborators = @wiki.collaborators
     
+    
   end
 
   def new
@@ -20,6 +21,7 @@ class WikisController < ApplicationController
     @wiki = Wiki.new(params[:id])
     @wiki.title = params[:wiki][:title]
     @wiki.body = params[:wiki][:body]
+    @wiki.private = params[:wiki][:private]
     @wiki.user = current_user
     
     
@@ -34,6 +36,7 @@ class WikisController < ApplicationController
 
   def edit
     @wiki = Wiki.find(params[:id])
+    @collaborators = @wiki.collaborators
     
     
   end
