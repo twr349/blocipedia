@@ -1,14 +1,19 @@
 <div class="container">
     <div class="jumbotron">
         <h1><%= @wiki.title %></h1>
+          <% if @wiki.private = true %>
+                 <span><h4>Private Wiki</h4></span>
+        <% end %>
           <p><%= markdown(@wiki.body) %></p>
             <small>
-              submitted <%= time_ago_in_words(@wiki.created_at) %> ago by <%= @wiki.user.email %> <br>
-              
-             <% if @wiki.private? %>
-                 Private Wiki
-             <% end %>
+              Submitted <%= time_ago_in_words(@wiki.created_at) %> ago by <%= @wiki.user.email %><br>
+              Collaborators 
+              <% @wiki.collaborators.each do |collaborator| %>
+               <%= User.find_by_id(collaborator.user_id).email %>,
+               <%= link_to "Delete User", [@wiki, collaborator], class: 'btn btn-danger delete', method: :delete, data: {confirm: 'Are you sure you want to delete this collaborator?'} %>
+              <% end %>
             </small>
+            <br>
    
      <%= link_to "Edit", edit_wiki_path(@wiki), class: 'btn btn-default' %>
      <% if current_user.Admin? %>

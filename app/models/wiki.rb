@@ -1,7 +1,7 @@
 class Wiki < ApplicationRecord
   belongs_to :user
-  has_many :wiki_collaborators, dependent: :destroy
-  has_many :collaborators, through: :wiki_collaborators, class_name: 'User'
+  has_many :collaborators, dependent: :destroy
+  has_many :users, through: :collaborators
   
   
   

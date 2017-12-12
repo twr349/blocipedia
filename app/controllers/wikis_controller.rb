@@ -8,6 +8,7 @@ class WikisController < ApplicationController
 
   def show
     @wiki = Wiki.find(params[:id])
+    @collaborators = @wiki.collaborators
     
   end
 
@@ -20,7 +21,7 @@ class WikisController < ApplicationController
     @wiki.title = params[:wiki][:title]
     @wiki.body = params[:wiki][:body]
     @wiki.user = current_user
-    @wiki.collaborators = []
+    
     
     if @wiki.save
       flash[:notice] = "Wiki was saved."
@@ -33,7 +34,7 @@ class WikisController < ApplicationController
 
   def edit
     @wiki = Wiki.find(params[:id])
-   
+    
     
   end
   
