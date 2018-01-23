@@ -1,24 +1,11 @@
+##Blocipedia 
+Ruby on Rails application for users to post wikis.
 
-     ,-----.,--.                  ,--. ,---.   ,--.,------.  ,------.
-    '  .--./|  | ,---. ,--.,--. ,-|  || o   \  |  ||  .-.  \ |  .---'
-    |  |    |  || .-. ||  ||  |' .-. |`..'  |  |  ||  |  \  :|  `--, 
-    '  '--'\|  |' '-' ''  ''  '\ `-' | .'  /   |  ||  '--'  /|  `---.
-     `-----'`--' `---'  `----'  `---'  `--'    `--'`-------' `------'
-    ----------------------------------------------------------------- 
+# Features
 
++ Users can create a standard account in order to create, edit, and collaborate on public wikis using Markdown syntax. Anyone can view public wikis.
++ Users can pay to upgrade their account to Premium in order to view and create private wikis.
++ Premium users can allow others to view and collaborate on the private wikis they create.
++ Premium users can downgrade their account back to Standard.
++ When a user downgrades his or her account, his or her private wikis will automatically become public.
 
-Welcome to your Rails project on Cloud9 IDE!
-
-To get started, just do the following:
-
-1. Run the project with the "Run Project" button in the menu bar on top of the IDE.
-2. Preview your new app by clicking on the URL that appears in the Run panel below (https://HOSTNAME/).
-
-Happy coding!
-The Cloud9 IDE team
-
-
-## Support & Documentation
-
-Visit http://docs.c9.io for support, or to learn more about using Cloud9 IDE. 
-To watch some training videos, visit http://www.youtube.com/user/c9ide
