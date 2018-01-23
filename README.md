@@ -1,5 +1,5 @@
 ##Blocipedia 
-Ruby on Rails application for users to post wikis.
+Ruby on Rails application for users to create wikis.
 
 # Features
 
